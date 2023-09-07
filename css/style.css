@@ -1,0 +1,266 @@
+:root {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  --font-size: 15px;
+  --font-family: 'League Spartan', sans-serif;
+  --font-family-alternative: 'Open Sans', sans-serif;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700-bold: 700;
+}
+
+/* basic css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--fw-400);
+}
+
+/* basic css End */
+
+/* background css */
+.bg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+}
+
+.bg>.bg-top {
+  display: flex;
+  justify-content: flex-start;
+  height: 50%;
+}
+
+.bg>.bg-bottom {
+  display: flex;
+  justify-content: flex-end;
+  height: 50%;
+}
+
+.bg>.bg-top>img {
+  width: 50%;
+}
+
+.bg>.bg-bottom>img {
+  width: 50%;
+}
+
+/* background css end */
+
+.container-flex {
+  display: flex;
+  padding: 30px;
+  margin: 30px;
+  justify-content: center;
+  align-content: center;
+  z-index: 1;
+}
+
+.container-flex>.main {
+  height: 550px;
+  width: 1000px;
+
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  gap: 10px;
+  align-content: center;
+}
+
+.container-flex>.main>.item {
+  height: 250px;
+}
+
+.container-flex>.main>.i1 {
+  flex: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.i1>h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--very-dark-magenta);
+}
+
+.i1>p {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  color: var(--dark-grayish-magenta);
+}
+
+.container-flex>.main>.i2 {
+  flex: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  row-gap: 15px;
+  padding: 15px 0;
+}
+
+.i2>.item-inner {
+  height: 55px;
+  width: 400px;
+  background-color: var(--light-grayish-magenta);
+  border-radius: 10px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-inner>.stars>.star {
+  width: 20px;
+  height: 20px;
+}
+
+.item-inner>.info {
+  color: var(--very-dark-magenta);
+  font-weight: var(--fw-500);
+}
+
+.i2>.item-inner:nth-child(1) {
+  margin-right: 105px;
+}
+
+.i2>.item-inner:nth-child(2) {
+  margin-right: 55px;
+}
+
+.i2>.item-inner:nth-child(3) {
+  margin-right: 5;
+}
+
+.container-flex>.main>.i3 {
+  flex: 90%;
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.i3>.card {
+  height: 200px;
+  width: 260px;
+  background-color: var(--very-dark-magenta);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+.i3>.card>.card-info {
+  display: flex;
+  column-gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.i3>.card>.card-info>.user-img>img {
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.i3>.card>.card-info>.user-info>.name {
+  color: var(--white);
+  font-weight: var(--fw-500);
+  margin-bottom: 5px;
+}
+
+.i3>.card>.card-info>.user-info>.occupation {
+  color: var(--soft-pink);
+  font-weight: var(--fw-500);
+}
+
+.i3>.card>.card-body>p {
+  color: var(--white);
+  font-weight: var(--fw-400);
+}
+
+.i3>.card:nth-child(1) {
+  margin-bottom: 40px;
+}
+
+.i3>.card:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.i3>.card:nth-child(3) {
+  margin-bottom: 0;
+}
+
+
+
+
+/* Footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Footer End */
+
+@media (max-width: 375px) {
+
+  .container-flex {}
+
+  .container-flex>.main {
+    flex-direction: column;
+    width: 375px;
+    height: 100%;
+  }
+
+  .main>.item {
+    flex-direction: column;
+    width: 100%;
+    flex: 100%;
+  }
+
+  .main>.i1>h1,p {
+    text-align: center;
+  }
+
+  .i2>.item-inner:nth-child(1),
+  .i2>.item-inner:nth-child(2),
+  .i2>.item-inner:nth-child(3) {
+    margin-right: 0;
+    width: 100%;
+    row-gap: 0;
+  }
+
+  .main>.i2>.item-inner {
+    row-gap: 8px;
+  }
+
+  .i2>.item-inner {
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+}
